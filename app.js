@@ -5,14 +5,13 @@ var url = require('url');
 
 var ApplicationSettings = require('./config/ApplicationSettings');
 var generalVariableSettings = require('./config/generalVariableSettings');
-
 var args = process.argv;
 if (!args[2]) {
   ApplicationSettings.ENV = 'local';
 } else {
   ApplicationSettings.ENV = args[2];
 }
-console.log("Denefits using envoirnment", ApplicationSettings.ENV);
+console.log("Boilerplate using envoirnment", ApplicationSettings.ENV);
 if (!ApplicationSettings.hasAllSettings()) {
   console.log("Couldn't load environment settings");
   process.exit(-1);
@@ -25,7 +24,7 @@ var users = require("./routes/users");
 // var appSettings = require("./routes/appSettings");
 
 var app = express();
-app.set('port', generalVariableSettings.local.boiler_port);
+app.set('port', generalVariableSettings.local.local_port);
 app.use(bodyParser.urlencoded({
   extended: true
 }));

@@ -8,7 +8,7 @@ exports.userList = function(req, res) {
             sendResponse.sendErrorFlagResponse(3, 151, err, res);
         } else {
             var response = {
-                states: stateResult
+                UserList: stateResult
             };
             sendResponse.sendSuccessFlagResponseWithData(103, response, res);
         }

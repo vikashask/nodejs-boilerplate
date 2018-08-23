@@ -2,7 +2,7 @@ module.exports = {
     "local": {
         "database": "boiler",
         "username": "root",
-        "password": "welcome",
+        "password": "",
         "host": "localhost"
     },
     "development": {

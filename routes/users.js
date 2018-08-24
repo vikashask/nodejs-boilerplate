@@ -44,11 +44,11 @@ exports.userInsert = function(req, res) {
 };
 
 exports.checkUserLogin = function(req, res) {
-    var getStates = "SELECT * FROM `users` WHERE `password` = ? AND `user_name` = ?";
-    connection.query(getStates, [md5(req.body.password),req.body.user_name], function(err, stateResult) {
+    var getLoginSql = "SELECT * FROM `users` WHERE `password` = ? AND `user_name` = ?";
+    connection.query(getStates, [md5(req.body.password),req.body.user_name], function(err, getLoginSqlRes) {
         if (err) {
             sendResponse.sendErrorFlagResponse(3, 151, err, res);
-        } else if (stateResult.length == 0) {
+        } else if (getLoginSqlRes.length == 0) {
             res.send({
                 error: "Username and password doesn't match"
             });

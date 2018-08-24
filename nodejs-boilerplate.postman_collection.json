@@ -1,0 +1,102 @@
+{
+	"info": {
+		"_postman_id": "a2d49861-495e-45e6-b5bf-65dee49e168a",
+		"name": "nodejs-boilerplate",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3003/user_list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3003/user_list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"user_list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3003",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3003",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3003"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3003/user_insert",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"user_name\":\"vikask\",\n\t\"password\":\"123\",\n\t\"email\":\"vikashraj144@gmail.com\",\n\t\"mobile\":\"11111111234\",\n\t\"address\":\"gaya\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3003/user_insert",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"user_insert"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3003/user_insert",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\":\"4\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3003/user_delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"user_delete"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

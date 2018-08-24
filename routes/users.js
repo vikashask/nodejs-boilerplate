@@ -2,13 +2,13 @@ var sendResponse = require('../utils/sendResponse');
 var md5 = require('md5');
 
 exports.userList = function(req, res) {
-    var getStates = "SELECT * FROM `users` WHERE 1";
-    connection.query(getStates, [], function(err, stateResult) {
+    var userListSql = "SELECT * FROM `users` WHERE 1";
+    connection.query(userListSql, [], function(err, userListRes) {
         if (err) {
             sendResponse.sendErrorFlagResponse(3, 151, err, res);
         } else {
             var response = {
-                UserList: stateResult
+                UserList: userListRes
             };
             sendResponse.sendSuccessFlagResponseWithData(103, response, res);
         }

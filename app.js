@@ -30,7 +30,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use(bodyParser.json());
-app.all('*', function(req, res, next) {
+app.all('*', function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   if (req && req.files) {
     console.log("Multipart request");
@@ -38,6 +38,10 @@ app.all('*', function(req, res, next) {
     console.log("Request Parameters: ", req.body);
   }
   next();
+});
+
+app.get('/', function (req, res) {
+  res.send('Welcome to Node boilerplate')
 });
 
 // getting all user list
@@ -48,6 +52,6 @@ app.post('/user_insert', users.userInsert);
 // app.post('/state_list', state.stateList);
 
 
-http.createServer(app).listen(app.get('port'), function() {
+http.createServer(app).listen(app.get('port'), function () {
   console.log('Server listening on port ', app.get('port'), " environment ", ApplicationSettings.ENV);
 });

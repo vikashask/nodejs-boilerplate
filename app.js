@@ -1,7 +1,6 @@
-var express = require('express');
-var http = require('http');
-var bodyParser = require('body-parser');
-var url = require('url');
+var express = require('express'); // express js
+var http = require('http'); // http module
+var bodyParser = require('body-parser'); 
 
 var ApplicationSettings = require('./config/ApplicationSettings');
 var generalVariableSettings = require('./config/generalVariableSettings');
@@ -16,7 +15,6 @@ if (!ApplicationSettings.hasAllSettings()) {
   console.log("Couldn't load environment settings");
   process.exit(-1);
 }
-var mysql_connection = require('./utils/connection');
 genVarSettings = ApplicationSettings.generalVariableSettings();
 
 var users = require("./routes/users");

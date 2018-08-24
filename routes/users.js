@@ -16,13 +16,13 @@ exports.userList = function(req, res) {
 };
 
 exports.userDelete = function(req, res) {
-    var getStates = "DELETE FROM `users` WHERE `id` = ?";
-    connection.query(getStates, [req.body.id], function(err, stateResult) {
+    var userDeleteSql = "DELETE FROM `users` WHERE `id` = ?";
+    connection.query(userDeleteSql, [req.body.id], function(err, userDeleteRes) {
         if (err) {
             sendResponse.sendErrorFlagResponse(3, 151, err, res);
         } else {
             var response = {
-                states: stateResult
+                user: userDeleteRes
             };
             sendResponse.sendSuccessFlagResponseWithData(103, response, res);
         }

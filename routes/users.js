@@ -30,13 +30,13 @@ exports.userDelete = function(req, res) {
 };
 
 exports.userInsert = function(req, res) {
-    var getStates = "INSERT INTO `users`(`user_name`, `password`, `email`, `mobile`, `address`, `status`) VALUES (?,?,?,?,?,?)";
-    connection.query(getStates, [req.body.user_name,md5(req.body.password),req.body.email,req.body.mobile,req.body.address,1], function(err, stateResult) {
+    var userInsertSql = "INSERT INTO `users`(`user_name`, `password`, `email`, `mobile`, `address`, `status`) VALUES (?,?,?,?,?,?)";
+    connection.query(userInsertSql, [req.body.user_name,md5(req.body.password),req.body.email,req.body.mobile,req.body.address,1], function(err, userInsertResult) {
         if (err) {
             sendResponse.sendErrorFlagResponse(3, 151, err, res);
         } else {
             var response = {
-                states: stateResult
+                userInsert: userInsertResult
             };
             sendResponse.sendSuccessFlagResponseWithData(103, response, res);
         }

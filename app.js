@@ -10,6 +10,7 @@ if (!args[2]) {
 } else {
   ApplicationSettings.ENV = args[2];
 }
+var mysql_connection = require('./utils/connection');
 console.log("Boilerplate using envoirnment", ApplicationSettings.ENV);
 if (!ApplicationSettings.hasAllSettings()) {
   console.log("Couldn't load environment settings");
